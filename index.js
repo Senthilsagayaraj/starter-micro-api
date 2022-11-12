@@ -21,7 +21,8 @@ app.post('/sumpvolume', (req,res)=>{
 	let breadth = req.body.breadth; 
 	let height = req.body.height;
 	volume = ((length*breadth*height)*29.5);
-	res.json({"volume":volume});
+	res.json({"volume":volume,
+		 "unitSI":litres});
 });
 
 app.listen(3000,(res)=>{
