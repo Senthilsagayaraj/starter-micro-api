@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyparser=require('body-parser');
-
 app.use(express.json());
 
 app.get('/', (req,res)=>{
@@ -22,7 +21,7 @@ app.post('/sumpvolume', (req,res)=>{
 	let breadth = req.body.breadth; 
 	let height = req.body.height;
 	volume = ((length*breadth*height)*29.5);
-	res.send('sump volume is '+volume+' litres');
+	res.json(volume);
 });
 
 app.listen(3000,(res)=>{
